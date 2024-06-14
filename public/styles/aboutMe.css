@@ -1,0 +1,43 @@
+.first{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.first .mainphoto img{
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgb(38, 38, 38);
+}
+.first .mainphoto img:hover{
+    filter: saturate(0) blur(0.8px);
+    transition: all ease all 0.25s;
+}
+
+.first .rectangle{
+    height: 10rem;
+    width: 30rem;
+    text-wrap: wrap;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px ;
+
+}
+.first .rectangle h1{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.first .rectangle .name:hover{
+    filter: opacity(0.2);
+    
+}
+.first .rectangle .name::selection{
+    color: red;
+}
+.first .rectangle p{
+    font-size: 18px;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+<div class="main">
+    <div class="conterntContainer">
+        <form action="create" method="post">
+            <hr>
+            <div class="date"><%= datetime %></div>
+            <div class="heading">Title:<input type="text" placeholder="Please enter title of your blog"></div>
+            <div class="mainContent">Main Content:<input type="text" placeholder="Type your content here"></div>
+            <div class="submit"><input type="submit" value="Create"></div>
+        </form>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
