@@ -9,13 +9,18 @@
 <body>
     <%- include("partials/header.ejs")  %>
     <div class="main">
-        <h1>The Blogs</h1>
+        <h2>Fell free to read</h2>
         <ul>
+            <% function nl2br(str) { return str.replace(/\n/g, '<br>'); } %>
+
             <% posts.forEach(post=>{ %>
                 <li> 
-                    <p id="time"> <%= post.time %> </p>
+                    <div class="topPart">
+                        <p id="aurthor">Author: <%= post.aurthor %> </p>
+                        <p id="time"> <%= post.time %> </p>
+                    </div> 
                     <h1><%= post.heading  %></h1>
-                    <p><%= post.content %> </p>
+                    <p><%- nl2br(post.content) %></p>  
 
                 </li>
             <% }) %>

@@ -21,6 +21,7 @@ app.get("/create",(req,res)=>{
 app.post('/create',(req,res)=>{
     const post = {
         time: generateCurrentTime(),
+        aurthor: req.body.postAuthor,
         heading: req.body.postHeading,
         content: req.body.postContent
     }
@@ -45,5 +46,3 @@ function generateCurrentTime(){
     + ("0" + currentdate.getMinutes()).slice(-2) + ":" 
     + ("0" + currentdate.getSeconds()).slice(-2);
 }
-
-    

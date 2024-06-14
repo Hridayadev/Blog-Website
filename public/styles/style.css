@@ -11,11 +11,13 @@ ul{
 }
 ul li{
     height: 5rem;
+    width: 100%;
     background-color: blue;
     list-style-type: none;
     margin-bottom: 3px;
     padding: 0px;
 }
-ul li #time{
-    text-align: end;
+.topPart{
+    display: flex;
+    justify-content: space-between;
 }
