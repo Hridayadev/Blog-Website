@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs')  %>
+<form action="/edit/<%= post.code %>" method="post" name="editContent" class="editLa">
+    <h1>Edit the necessary details:</h1>
+    <div class="author">Author:<input type="text" name="editAuthor" value="<%= post.author %>" required ></div>
+    <div class="heading"> Title : <input type="text" name="editHeading" value="<%= post.heading %>" required ></div>
+    <div class="mainContent">Main Content: <br> <textarea name="editContent" required rows="20" cols="100"><%= post.content %></textarea></div>
+    <div class="submit"><input type="submit" value="Save"></div>
+</form>
+<%- include('partials/footer.ejs') %>

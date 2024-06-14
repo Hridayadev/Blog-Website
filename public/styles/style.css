@@ -5,12 +5,12 @@
 }
 ul{
     padding: 3px;
-    height: 27rem;
+    /* height: 27rem; */
     padding: 2rem;
     background-color: green;
 }
 ul li{
-    height: 5rem;
+    /* height: 5rem; */
     width: 100%;
     background-color: blue;
     list-style-type: none;
@@ -20,4 +20,7 @@ ul li{
 .topPart{
     display: flex;
     justify-content: space-between;
+}
+.fullScreen{
+    background-color: white;
 }

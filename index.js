@@ -23,7 +23,7 @@ app.post('/create',(req,res)=>{
         time: generateCurrentTime(),
         aurthor: req.body.postAuthor,
         heading: req.body.postHeading,
-        content: req.body.postContent
+        content: req.body.postContent,
     }
     posts.push(post);
     res.redirect("/");
