@@ -1,9 +1,26 @@
-<%- include("partials/header.ejs")  %>
-<div class="main">
-    <h1>The Blogs</h1>
-    <div class="contentContainer">
-        
-    </div>
-</div>
-<%- include("partials/footer.ejs")  %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Blog</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>
+    <div class="main">
+        <h1>The Blogs</h1>
+        <ul>
+            <% posts.forEach(post=>{ %>
+                <li> 
+                    <p id="time"> <%= post.time %> </p>
+                    <h1><%= post.heading  %></h1>
+                    <p><%= post.content %> </p>
 
+                </li>
+            <% }) %>
+        </ul>
+      </div>
+    <%- include("partials/footer.ejs")  %>  
+</body>
+</html>

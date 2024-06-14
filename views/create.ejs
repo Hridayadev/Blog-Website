@@ -1,14 +1,24 @@
-<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="styles/create.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
 <div class="main">
-    <div class="conterntContainer">
-        <form action="create" method="post">
-            <hr>
-            <div class="date"><%= datetime %></div>
-            <div class="heading">Title:<input type="text" placeholder="Please enter title of your blog"></div>
-            <div class="mainContent">Main Content:<input type="text" placeholder="Type your content here"></div>
+    <div class="contentContainer">
+        <form action="/create" method="post" name="postContent" class="content">
+            <h1>Enter details to create a post:</h1>
+            <div class="heading">Title:<input type="text" name="postHeading" placeholder="Please enter title of your blog" required ></div>
+            <div class="mainContent">Main Content: <br> <textarea name="postContent" id="" required rows="20" cols="100" ></textarea></div>
             <div class="submit"><input type="submit" value="Create"></div>
         </form>
     </div>
 </div>
 
 <%- include("partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.contentContainer .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading input{
+    width: 500px;
+}
