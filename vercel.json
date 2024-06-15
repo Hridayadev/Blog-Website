@@ -1,12 +1,21 @@
 {
-    "version": 2,
-    "name": "templates",
-    "builds": [{
-      "src": "app.js",
-      "use": "@vercel/node"
-    }],
-    "routes": [{
+  "version": 2,
+  "name": "templates",
+  "builds": [{
+    "src": "app.js",
+    "use": "@vercel/node"
+  }],
+  "routes": [
+    {
       "src": "/(.*)",
       "dest": "app.js"
-    }]
-  }
+    },
+    {
+      "src": "/public/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000, immutable"
+      },
+      "dest": "/public/$1"
+    }
+  ]
+}
