@@ -1,9 +1,17 @@
-<%- include('partials/header.ejs')  %>
-<form action="/edit/<%= post.code %>" method="post" name="editContent" class="editLa">
-    <h1>Edit the necessary details:</h1>
-    <div class="author">Author:<input type="text" name="editAuthor" value="<%= post.author %>" required ></div>
-    <div class="heading"> Title : <input type="text" name="editHeading" value="<%= post.heading %>" required ></div>
-    <div class="mainContent">Main Content: <br> <textarea name="editContent" required rows="20" cols="100"><%= post.content %></textarea></div>
-    <div class="submit"><input type="submit" value="Save"></div>
-</form>
-<%- include('partials/footer.ejs') %>
+<%- include("partials/header.ejs") %>
+<link rel="stylesheet" href="/styles/edit.css">
+<div class="main">
+    <div class="contentContainer">
+        <form action="/edit/<%= index %>" method="post" name="postContent" class="content">
+            <h1>Edit Post</h1>
+            <div class="author">Author: <input type="text" name="postAuthor" value="<%= post.author %>" required></div>
+            <div class="heading">Title: <input type="text" name="postHeading" value="<%= post.heading %>" required></div>
+            <div class="mainContent">Main Content: <br>
+                <textarea name="postContent" required rows="20" cols="100"><%= post.content %></textarea>
+            </div>
+            <input type="hidden" name="code" value="<%= post.code %>">
+            <div class="submit"><input type="submit" value="Update"></div>
+        </form>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>
