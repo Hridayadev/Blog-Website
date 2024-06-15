@@ -15,6 +15,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
+app.use('/styles', express.static(path.join(__dirname, 'public/styles')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use('/main.js', express.static(path.join(__dirname, 'public/main.js')));
+app.use('/edit.js', express.static(path.join(__dirname, 'public/edit.js')));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", (req,res)=>{

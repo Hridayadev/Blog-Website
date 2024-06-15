@@ -1,21 +1,14 @@
 {
   "version": 2,
-  "name": "templates",
+  "name": "blogwebsite",
   "builds": [{
     "src": "app.js",
     "use": "@vercel/node"
   }],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.js"
-    },
-    {
-      "src": "/public/(.*)",
-      "headers": {
-        "cache-control": "s-maxage=31536000, immutable"
-      },
-      "dest": "/public/$1"
-    }
+    { "src": "/styles/(.*)", "dest": "/public/styles/$1" },
+    { "src": "/images/(.*)", "dest": "/public/images/$1" },
+    { "src": "/main.js", "dest": "/public/main.js" },
+    { "src": "/(.*)", "dest": "app.js" }
   ]
 }
