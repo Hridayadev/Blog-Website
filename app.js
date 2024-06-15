@@ -1,12 +1,13 @@
 import express from "express"
 import bodyParser from "body-parser"
 import fs from "fs";
+import path from "path";
 
 const port = 3000;
 const app = express();
 
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
