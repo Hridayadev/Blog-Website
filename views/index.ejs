@@ -2,11 +2,7 @@
     <div class="main">
         <h2>Fell free to read</h2>
         <ul>
-            <% if (posts[i] && posts[i].content) { %>
-                <p class="content" style="display: none;"><%- nl2br(posts[i].content) %></p>
-            <% } else { %>
-                <p class="content" style="display: none;"><%- nl2br('') %></p>
-            <% } %>
+            <% function nl2br(str) { return str.replace(/\n/g, '<br>'); } %>
 
             <% for(let i=0; i<posts.length ; i++){%>
                 <li class="mainPortal"> 
