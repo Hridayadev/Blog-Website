@@ -14,7 +14,11 @@ const __dirname = path.dirname(__filename);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static("public"));
+app.use('/styles', express.static(path.join(__dirname, 'public/styles')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use('/scripts', express.static(path.join(__dirname, 'public/scripts')));
+app.use('/main.js', express.static(path.join(__dirname, 'public/main.js')));
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", (req,res)=>{
