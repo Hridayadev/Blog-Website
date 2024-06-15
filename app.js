@@ -33,29 +33,38 @@ app.post('/create',(req,res)=>{
     fs.appendFileSync('codes.txt', `Post: ${post.heading}, Code: ${code}\n`, 'utf-8');
     res.send(`<script>alert("You have to remember this code if you want to edit or delete the post in the future: ${code}"); window.location.href="/";</script>`);
     // here
-    // res.redirect("/");
+   
 })
 
-app.get("/edit/:index", (req, res) => {
+app.get('/edit/:index', (req, res) => {
     const postIndex = req.params.index;
-    const post = posts[postIndex];
-    if (post) {
-        res.render("edit.ejs", { post: post, index: postIndex });
+    const code = req.query.code;
+
+    if (postIndex >= 0 && postIndex < posts.length) {
+        if (posts[postIndex].code == code) {
+            res.render('edit.ejs', { postIndex: postIndex, post: posts[postIndex], code: code });
+        } else {
+            res.send("<script>alert('Wrong code'); window.location.href='/';</script>");
+        }
     } else {
         res.status(404).send("Post not found");
     }
 });
 
-app.post('/edit/:index', (req, res) => {
+app.post('/update/:index', (req, res) => {
     const postIndex = req.params.index;
     const code = req.body.code;
-    if (posts[postIndex]) {
-        if(posts[postIndex].code ==code){
+
+    if (postIndex >= 0 && postIndex < posts.length) {
+        if (posts[postIndex].code == code) {
+            // Update the post with new values
             posts[postIndex].aurthor = req.body.postAuthor;
             posts[postIndex].heading = req.body.postHeading;
             posts[postIndex].content = req.body.postContent;
+
+            // Redirect to homepage
             res.redirect("/");
-        }else{
+        } else {
             res.send("<script>alert('Wrong code'); window.location.href='/';</script>");
         }
     } else {

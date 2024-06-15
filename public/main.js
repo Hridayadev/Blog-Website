@@ -27,22 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
-    });
-    document.querySelectorAll(".edit").forEach(button => {
-        button.addEventListener("click", function() {
-            const index = this.getAttribute("data-index");
-            const code = prompt("Enter the 4-digit code:");
-            if (code) {
-                const form = document.createElement("form");
-                form.method = "POST";
-                form.action = `/edit/${index}`;
-                form.innerHTML = `<input type="hidden" name="code" value="${code}">`;
-                document.body.appendChild(form);
-                form.submit();
-            }
-        });
-    });
-    
+    });  
     document.querySelectorAll(".delete").forEach(button => {
         button.addEventListener("click", function() {
             const index = this.getAttribute("data-index");
@@ -54,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.innerHTML = `<input type="hidden" name="code" value="${code}">`;
                 document.body.appendChild(form);
                 form.submit();
+            }
+        });
+    });
+    document.querySelectorAll(".edit").forEach(button => {
+        button.addEventListener("click", function() {
+            const index = this.getAttribute("data-index");
+            const code = prompt("Enter the 4-digit code:");
+    
+            if (code) {
+                
+                window.location.href = `/edit/${index}?code=${code}`;
             }
         });
     });

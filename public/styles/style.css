@@ -7,12 +7,12 @@ ul{
     padding: 3px;
     /* height: 27rem; */
     padding: 2rem;
-    background-color: green;
+    /* background-color: green; */
 }
 ul li{
     /* height: 5rem; */
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     list-style-type: none;
     margin-bottom: 3px;
     padding: 0px;

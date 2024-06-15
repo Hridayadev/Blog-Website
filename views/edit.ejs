@@ -1,16 +1,13 @@
 <%- include("partials/header.ejs") %>
-<link rel="stylesheet" href="/styles/edit.css">
 <div class="main">
     <div class="contentContainer">
-        <form action="/edit/<%= index %>" method="post" name="postContent" class="content">
-            <h1>Edit Post</h1>
-            <div class="author">Author: <input type="text" name="postAuthor" value="<%= post.author %>" required></div>
-            <div class="heading">Title: <input type="text" name="postHeading" value="<%= post.heading %>" required></div>
-            <div class="mainContent">Main Content: <br>
-                <textarea name="postContent" required rows="20" cols="100"><%= post.content %></textarea>
-            </div>
-            <input type="hidden" name="code" value="<%= post.code %>">
+        <form action="/update/<%= postIndex %>" method="post" name="postContent" class="content">
+            <h1>Edit Post:</h1>
+            <div class="aurthor">Author:<input type="text" name="postAuthor" placeholder="Please enter your name" value="<%= post.aurthor %>" required ></div>
+            <div class="heading"> Title : <input type="text" name="postHeading" placeholder="Please enter title of your blog" value="<%= post.heading %>" required ></div>
+            <div class="mainContent">Main Content: <br> <textarea name="postContent" id="" required rows="20" cols="100" placeholder="Please enter your main content of your blog in a format :) "><%= post.content %></textarea></div>
             <div class="submit"><input type="submit" value="Update"></div>
+            <input type="hidden" name="code" value="<%= code %>">
         </form>
     </div>
 </div>
