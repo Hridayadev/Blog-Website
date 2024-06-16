@@ -35,7 +35,7 @@ app.post('/create',(req,res)=>{
     const code = Math.floor(1000+ Math.random()*9000);
     const post = {
         time: generateCurrentTime(),
-        aurthor: req.body.postAuthor,
+        author: req.body.postAuthor,
         heading: req.body.postHeading,
         content: req.body.postContent,
         code: code
